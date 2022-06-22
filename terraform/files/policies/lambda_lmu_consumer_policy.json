@@ -1,0 +1,29 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:SubscribeToShard",
+                "kinesis:DescribeStreamSummary",
+                "kinesis:GetShardIterator",
+                "kinesis:GetRecords",
+                "kinesis:DescribeStream"
+            ],
+            "Resource": [
+                "arn:aws:kinesis:us-east-2:471379067324:stream/${kinesis_stream_name}",
+                "arn:aws:kinesis:*:471379067324:*/*/consumer/*:*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:ListStreams",
+                "kinesis:ListShards"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
